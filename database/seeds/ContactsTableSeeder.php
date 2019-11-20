@@ -15,7 +15,6 @@ class ContactsTableSeeder extends Seeder
         Contact::truncate(); // เคลีย์ ข้อมูล
 
         $faker = \Faker\Factory::create();
-
         $faker->locale('th_TH');
 
         // And now, let's create a few articles in our database:
