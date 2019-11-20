@@ -10,5 +10,6 @@
 - Run command `php artisan db:seed`
 - Run command `php artisan storage:link`
 - Run command `php artisan serve` and open `http://127.0.0.1:8000` on browser
-
+- Run command `npm install --save`
+- Run command `npm run dep`
 
