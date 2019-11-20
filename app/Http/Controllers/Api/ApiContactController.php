@@ -9,6 +9,8 @@ use App\Models\Contact AS MDB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
+
+
 use Illuminate\Support\Facades\Storage;
 
 // use Illuminate\Support\Facades\Auth;
@@ -19,17 +21,19 @@ class ApiContactController extends Controller
 {
 
     protected $cValidator = [
-        'name' => 'required|max:75',
+        'name' => 'required|max:175',
+        'email' => 'required',
 
         'file1' => 'mimes:jpeg,jpg,png|max:1000',
     ];
 
     protected $cValidatorMsg = [
         'name.required' => 'กรุณากรอกชื่อ',
+        'name.max' => 'ชื่อต้องไม่เกิน 175 ตัวอักษร',
 
-        // 'description.required' => 'กรุณากรอกคำอธิบาย',
+        'email.required' => 'กรุณากรออีเมล์',
 
-        // 'logo.required' => 'กรุณาใส่รูปภาพ',
+        // 'file1.required' => 'กรุณาใส่รูปภาพ',
         'file1.mimes' => 'ชนิดของไฟล์ต้องเป็น .jpeg, .jpg, .png เท่านั้น',
         'file1.max' => 'รับขนาดไฟล์สูงสุดที่จะอัปโหลดคือ 2MB',
     ];
@@ -66,7 +70,6 @@ class ApiContactController extends Controller
             if( $data->fill( Input::all() )->save() ){
 
                 // upload image
-
                 if($request->has('file1')){
                     $data->avatar = $request->file('file1')->store('avatar', 'public');
                     $data->update();
@@ -106,7 +109,6 @@ class ApiContactController extends Controller
             $arr['errors'] = $validator->errors();
         }
         else{
-
 
             // ลบรูปเดิม
             if(!empty($data->avatar) && ($request->has('file1') || $request->has('avatar_cancel_file')) ){
