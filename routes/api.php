@@ -24,7 +24,7 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('/guide/invoice', 'Api\GuideInvoiceController')->only([
         'index', 'store', 'update', 'destroy'
     ]);
-    
+
     // Route::apiResources([
     //     'contacts' => 'Api\ApiContactController',
     // ]);
