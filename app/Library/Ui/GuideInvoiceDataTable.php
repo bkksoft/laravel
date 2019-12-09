@@ -108,7 +108,14 @@ class GuideInvoiceDataTable extends Ui
     	return '<div class="media align-items-center">
 			<div class="pic-wrap mr-2" style="width: 36px;"><div class="pic pic-circle rounded-circle"  ref="avatar_url" data-type="image">'.$picture.'</div></div>
 			<div class="media-body">'.
-				'<a href="'.asset( "{$this->curentLink}/{$data['id']}" ).'/edit" data-plugin="lightbox"><strong ref="title">'.$data['title'].'</strong></a>'.
+				'<a href="'.asset( "{$this->curentLink}/{$data['id']}" ).'/edit" data-plugin="lightbox"><strong ref="name">'.$data['title'].'</strong></a>'.
+
+				'<a href="'.asset( "{$this->curentLink}/{$data['id']}" ).'/edit" data-plugin="lightbox"><strong ref="name">'.$data['title'].'</strong></a>'.
+
+				'<a href="'.asset( "{$this->curentLink}/{$data['id']}" ).'/edit" data-plugin="lightbox"><strong ref="name">'.$data['title'].'</strong></a>'.
+				
+				'<a href="'.asset( "{$this->curentLink}/{$data['id']}" ).'/edit" data-plugin="lightbox"><strong ref="name">'.$data['title'].'</strong></a>'.
+
 			'</div>
 		</div>';
     }
