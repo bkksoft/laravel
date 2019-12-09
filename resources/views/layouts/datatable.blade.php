@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
-@section('title', 'การตั้งค่า')
+@isset( $title )
+@section('title', $title)
+@endisset
 
 @section('content')
 
@@ -12,7 +14,6 @@
             $datatable->actions_right
         @endslot
         @endisset
-
 
         @isset( $datatable->tabs )
             @slot('nav')

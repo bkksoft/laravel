@@ -2,17 +2,10 @@
 
 namespace App\Http\Controllers;
 
-// use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Auth;
-// use Illuminate\Support\Facades\DB;
-// use Illuminate\Support\Facades\Validator;
-// use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 
-use App\Models\Contact as MDB;
-
-class ContactController extends Controller
+class GuideInvoiceController extends Controller
 {
-
     // show datata tables
     public function index()
     {
@@ -35,8 +28,7 @@ class ContactController extends Controller
 
         </div>';
 
-
-        $title = 'รายชื่อติดต่อ';
+        $title = 'ใบสำศัญจ่าย';
 
         $datatable = [
             'title' => $title,
@@ -45,45 +37,18 @@ class ContactController extends Controller
                 'limit' => 24,
                 'status' => 1
             ],
-            "url" => 'api/v1/contacts',
+            "url" => '/api/v1/guide/invoice',
 
             'filter' => $filters,
-            'actions_right' => '<a class="btn btn-primary ml-2" href="/contacts/create" data-plugin="lightbox"><svg class="svg-icon o__tiny o__by-text" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M2 5v2h3v3h2V7h3V5H7V2H5v3H2z"></path></svg> <span>เพิ่มรายชื่อ</span></a>'
+            'actions_right' => '<a class="btn btn-primary ml-2" href="/guide/invoice/create"><svg class="svg-icon o__tiny o__by-text" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M2 5v2h3v3h2V7h3V5H7V2H5v3H2z"></path></svg> <span>เพิ่ม</span></a>'
         ];
 
         return view('layouts.datatable')->with( compact('title','datatable') );
     }
 
 
-    // Show form create
     public function show()
     {
-        return view('forms.contacts.add');
+        return view('pages.guide.invoice.create');
     }
-
-    
-    // Show form edit
-    public function edit(MDB $db, $id)
-    {
-        $res = $db->get($id);
-        if( is_null( $res['data'] ) ){
-            return response()->json(["message" => 'Record not found!'], 404);
-        }
-
-        return view('forms.contacts.add')->with('data', $res['data']);
-    }
-
-
-    // Show form delete
-    public function delete(MDB $db, $id)
-    {
-       
-        $res = $db->get($id);
-        if( is_null( $res['data'] ) ){
-            return response()->json(["message" => 'Record not found!'], 404);
-        }
-        
-        return view('forms.contacts.delete')->with('data', $res['data']);
-    }
-    
 }

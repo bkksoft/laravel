@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Contact extends Model
+class GuideInvoiceModel extends Model
 {
-    protected $table = 'contacts';
+    protected $table = 'guides_invoices';
     public $primaryKey = 'id';
     public $itemstamps = false;
     public $maxlimit = 24;
@@ -15,15 +15,7 @@ class Contact extends Model
 
     // public $fields = ['*'];
 
-    protected $fillable = [
-        'name', 
-        
-        'email', 'phone_number', 'line',
-
-        'company', 'job',
-
-        'remarks'
-    ];
+    protected $fillable = ['title'];
 
     protected $hidden = [];
 
@@ -68,35 +60,22 @@ class Contact extends Model
         $sth = DB::table( $this->table );
 
         # set select: fields
-        // $sth->select( $this->fields );
+
 
         # set condition 
-        if( $request->has('status') ){
-
-            if( is_numeric($request->status) ) {
-                $sth->where( 'status', '=', $request->status );
-            }
-        }
+       
 
         if( !empty($request->q) ){
-            $sth->where( 'name', 'LIKE', "{$request->q}%" );
+            $sth->where( 'title', 'LIKE', "{$request->q}%" );
         }
 
         # set sort data
         if( $request->has('sort') ){
-            // $ops['sort'] = $request->sort;
-            // $sort = $ops['sort'];
-
-            // if( $sort=='' ){
-            //     $sort = 'updated_at desc';
-            // }
-            // else{
-            //     $sort = 'updated_at desc';
-            // }
+           
         }
         else{
             $sth->orderby( 'updated_at', 'desc' );
-            $sth->orderby( 'name', 'asc' );
+            $sth->orderby( 'title', 'asc' );
         }
 
         $sth->skip( ($ops['page']*$ops['limit'])- $ops['limit']);
@@ -137,15 +116,6 @@ class Contact extends Model
         return $data;
     }
     public function convert($data){
-
-        // $permalink = strtolower($data->name);
-        // $data->permalink = asset('/tours/countries/'.$permalink);
-
-        // $data->name = ucwords($permalink);
-
-        if( !empty( $data->avatar ) ){
-            $data->avatar_url = asset("storage/{$data->avatar}");
-        }
 
         return $data;
     }

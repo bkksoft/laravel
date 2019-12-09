@@ -1,6 +1,6 @@
 <?php
 
-class ContactsDataTables extends Ui
+class GuideInvoiceDataTable extends Ui
 {
 	function __construct() {
         parent::__construct();
@@ -13,12 +13,9 @@ class ContactsDataTables extends Ui
     	$key = [];
 
     	$key[] = ['label'=>'#', 'cls'=>'td-index', 'type'=>'index'];
-    	$key[] = ['id'=>'status', 'label'=>'status', 'cls'=>'td-status', 'type' => 'status'];
-    	$key[] = ['id'=>'name', 'label'=>'ชื่อ', 'cls'=>'td-name', 'type' => 'groupName', 'icon'=>'user-circle'];
-    	$key[] = ['id'=>'email', 'label'=>'อีเมล', 'cls'=>'td-email', 'icon'=>'envelope'];
-    	$key[] = ['id'=>'phone_number', 'label'=>'หมายเลขโทรศัพท์', 'cls'=>'td-phone', 'icon'=>'phone-alt'];
-    	$key[] = ['id'=>'company', 'label'=>'ตำแหน่งงานและบริษัท', 'cls'=>'td-company', 'icon'=>'building'];
-		// $key[] = ['id'=>'tags', 'label'=>'แท็ก', 'cls'=>'td-group-status'];
+    	// $key[] = ['id'=>'status', 'label'=>'status', 'cls'=>'td-status', 'type' => 'status'];
+    	$key[] = ['id'=>'title', 'label'=>'ชื่อ', 'cls'=>'td-name', 'type' => 'groupName', 'icon'=>'user-circle'];
+    	
 		
     	$key[] = ['id'=>'updated_at', 'label'=>'แก้ไขล่าสุด', 'cls'=>'td-date td-light', 'type'=>'date', 'icon'=>'calendar-alt'];
     	$key[] = ['id'=>'action', 'cls'=>'td-action', 'type'=>'action'];
@@ -111,7 +108,9 @@ class ContactsDataTables extends Ui
     	return '<div class="media align-items-center">
 			<div class="pic-wrap mr-2" style="width: 36px;"><div class="pic pic-circle rounded-circle"  ref="avatar_url" data-type="image">'.$picture.'</div></div>
 			<div class="media-body">'.
-				'<a href="'.asset( "{$this->curentLink}/{$data['id']}" ).'/edit" data-plugin="lightbox"><strong ref="name">'.$data['name'].'</strong></a>'.
+
+				'<a href="'.asset( "{$this->curentLink}/{$data['id']}" ).'/edit" data-plugin="lightbox"><strong ref="name">'.$data['title'].'</strong></a>'.
+
 			'</div>
 		</div>';
     }

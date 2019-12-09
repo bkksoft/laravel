@@ -36,10 +36,9 @@ $arr['hiddenInput'][] = array('name'=>'_token', 'value'=>csrf_token());
 
 $form = new Form();
 $formBox = $form->create()
+
     // set From
-    ->elem('div')
-    ->addClass('form-insert')
-    ->style('horizontal')
+    ->elem('div')->addClass('form-insert')->style('horizontal')
 
    ->field($imageCoverOpt['name'])
         ->label('รูป')
@@ -68,9 +67,10 @@ $formBox = $form->create()
         ->value( !empty($data->job)? $data->job:'' )
 
  ->field("email")
-        ->label( 'อีเมล' )
+        ->label( 'อีเมล*' )
         ->autocomplete('off')
         ->addClass('form-control')
+        ->attr('aria-label', 'required')
         ->value( !empty($data->email)? $data->email:'' )
 
  ->field("phone_number")
@@ -100,10 +100,14 @@ $arr['body'] = $formBox;
 $arr['form'] = '<form method="post" action="'.asset( $formAction ).'" data-plugin="formSubmit"></form>';
 
 # fotter: buttons
-$arr['button'] = '<button type="submit" class="btn btn-primary btn-submit ml-2"><span class="btn-text">บันทึก</span></button>';
+$arr['button'] = [
+       // '<button type="button" data-action="close" class="btn btn-outline-secondary ml-2"><span class="btn-text">ยกเลิก</span></button>',
+       '<button type="submit" class="btn btn-primary btn-submit ml-2"><span class="btn-text">บันทึก</span></button>'
+
+];
 
 $arr['width'] = 700;
-
+// $arr['bg'] = 'blue';
 
 http_response_code(200);
 echo json_encode($arr);
