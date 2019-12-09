@@ -14,6 +14,10 @@ class GuideInvoiceDataTable extends Ui
 
     	$key[] = ['label'=>'#', 'cls'=>'td-index', 'type'=>'index'];
     	// $key[] = ['id'=>'status', 'label'=>'status', 'cls'=>'td-status', 'type' => 'status'];
+		$key[] = ['id'=>'title', 'label'=>'ชื่อ', 'cls'=>'td-name', 'type' => 'groupName', 'icon'=>'user-circle'];
+		$key[] = ['id'=>'title', 'label'=>'ชื่อ', 'cls'=>'td-name', 'type' => 'groupName', 'icon'=>'user-circle'];
+		$key[] = ['id'=>'title', 'label'=>'ชื่อ', 'cls'=>'td-name', 'type' => 'groupName', 'icon'=>'user-circle'];
+		$key[] = ['id'=>'title', 'label'=>'ชื่อ', 'cls'=>'td-name', 'type' => 'groupName', 'icon'=>'user-circle'];
     	$key[] = ['id'=>'title', 'label'=>'ชื่อ', 'cls'=>'td-name', 'type' => 'groupName', 'icon'=>'user-circle'];
     	$key[] = ['id'=>'name', 'label'=>'ชื่อ', 'cls'=>'td-name', 'type' => 'groupName', 'icon'=>'user-circle'];
     	$key[] = ['id'=>'name', 'label'=>'ชื่อ', 'cls'=>'td-name', 'type' => 'groupName', 'icon'=>'user-circle'];
