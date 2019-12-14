@@ -160,6 +160,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Lavary\Menu\ServiceProvider::class,
+
     ],
 
     /*
@@ -214,6 +216,8 @@ return [
         'Form'   => App\Library\Form::class,
         'Ui'   => App\Library\Ui::class,
         // 'Business'   => App\Library\Business::class,
+
+        'Menu'      => Lavary\Menu\Facade::class,
     ],
 
 ];
