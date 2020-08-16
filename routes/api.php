@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,18 +14,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::prefix('v1')->group(function () {
-
-    Route::apiResource('contacts', 'Api\ApiContactController')->only([
-        'index', 'store', 'update', 'destroy'
-    ]);
-
-
-    Route::apiResource('/guide/invoice', 'Api\GuideInvoiceController')->only([
-        'index', 'store', 'update', 'destroy'
-    ]);
-
-    // Route::apiResources([
-    //     'contacts' => 'Api\ApiContactController',
-    // ]);
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
 });
