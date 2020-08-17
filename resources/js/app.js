@@ -6,7 +6,12 @@
 
 require('./bootstrap');
 
+window.Vue = require('vue');
+import VueRouter from 'vue-router'
 // window.Vue = require('vue');
+
+import SidebarComponent from './components/SidebarComponent';
+
 
 // /**
 //  * The following block of code may be used to automatically register your
@@ -30,3 +35,12 @@ require('./bootstrap');
 // const app = new Vue({
 //     el: '#app',
 // });
+Vue.use(VueRouter)
+
+new Vue({
+    el: '#doc',
+    // store,
+    components: {
+        SidebarComponent
+    }
+})

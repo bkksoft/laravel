@@ -7,13 +7,31 @@ $font-family-sans-serif: 'Sarabun', sans-serif;
 // $line-height-base: 1.6;
 
 // Colors
-// $blue: #3490dc;
-// $indigo: #6574cd;
-// $purple: #9561e2;
-// $pink: #f66d9b;
-// $red: #e3342f;
-// $orange: #f6993f;
-// $yellow: #ffed4a;
-// $green: #38c172;
-// $teal: #4dc0b5;
-// $cyan: #6cb2eb;
+$primary: #0171e3;
+$light: #ebebeb;
+
+$grid-gutter-width: 16px;
+
+$topbar-bg: #2362C8;
+$topbar-color: #fff;
+$topbar-shadow: 0 1px 5px 0 rgba(41,85,115,.21);
+
+//$topbar-bg: #fff;
+// $topbar-color: #5f6368;
+
+$sidebar-width: 228px;
+$sidebar-bg: #f4f4f4;
+$sidebar-color: #3c4043;
+
+$sidebar-collapsed-width: 56px;
+// $sidebar-active-bg: #fff;
+
+$sidebar-sub-width: 200px;
+$sidebar-sub-bg: #fff;
+
+$btn-padding-y-super: 17px;
+$btn-padding-x-super: 31px;
+$btn-font-size-super: 17px;
+$btn-border-radius-super: 12px;
+$btn-line-height-super: 1.17648;
+

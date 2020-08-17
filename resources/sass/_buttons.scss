@@ -1,0 +1,4 @@
+.btn-super{
+    letter-spacing: -.022em;
+    @include button-size($btn-padding-y-super, $btn-padding-x-super, $btn-font-size-super, $btn-line-height-super, $btn-border-radius-super);
+}

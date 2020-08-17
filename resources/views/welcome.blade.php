@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -16,9 +16,15 @@
 
                     {{ __('You are logged in!') }}
 
-                    <svg class="bi" width="32" height="32" fill="currentColor">
-                        <use xlink:href="bootstrap-icons.svg#heart-fill"/>
-                    </svg>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="btn btn-super btn-primary btn-block">ลงชื่อเข้าใช้</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-super btn-light btn-block">เลือกซื้อสินค้าต่อ</button>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
