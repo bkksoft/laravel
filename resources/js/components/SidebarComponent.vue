@@ -1,7 +1,8 @@
 <template>
-    <div id="sidebar" class="sidebar-container" :class="[is_allocation && 'sidebar-sub-menu-allocation', isOpen && 'is-collapsed']" role="navigation">
-        <div class="sidebar-overlay">
-            <div class="sidebar-menu">
+    <div id="sidebar" class="sidebar-container" :class="[is_allocation && 'sidebar-sub-menu-allocation', isOpen && 'is-collapsed', is_collapsed_focus && 'is-collapsed-focus']" role="navigation">
+        <div class="sidebar-overlay" @mouseleave="is_collapsed_focus=false">
+
+            <div class="sidebar-menu" @mouseenter="is_collapsed_focus=true">
 
                 <div class="sidebar-header">
                     <div class="sidebar-header-account media">
@@ -22,7 +23,6 @@
                     </div>
                 </div>
 
-
                 <div class="sidebar-body wk-scrollbar">
                     <ul class="sidebar-nav">
                         <li v-for="nav in navs" :key="nav.id" :class="nav.isExactActive && 'active'" class="nav-item">
@@ -38,6 +38,9 @@
                     </ul>
                 </div>
             </div>
+
+            <sub-menu v-for="nav in navs" :key="`sub-menu-`+nav.id" :nav="nav"></sub-menu>
+
         </div>
     </div>
 </template>
@@ -45,6 +48,8 @@
 <script>
 
 import {routes} from '../navigations'
+import SubMenu from './SubMenu'
+
 
 function hasOwn(obj, key) {
     return Object.prototype.hasOwnProperty.call(obj, key);
@@ -137,6 +142,11 @@ function setCookie(key, value, encoder, options) {
 } // Remove a cookie by the specified key.
 
 export default {
+
+    components: {
+        SubMenu,
+    },
+
     data(){
         return {
             navs: routes,
@@ -146,6 +156,9 @@ export default {
             status: null,
             supportsLocalStorage: true,
             isOpen: false,
+
+
+            is_collapsed_focus: false,
         }
     },
 
@@ -154,27 +167,61 @@ export default {
         var loc = window.location.pathname;
 
         // set path
-        // const navs = 
-        
-
+        let isExactActive = false;
         for (let index = 0; index < this.navs.length; index++) {
             const nav = this.navs[index];
 
             if(nav.path==loc){
                 this.navs[index]['isActive'] = true;
-
-                // console.log('isActive..', nav.path );
             }
-            
-            console.log( 'slice...', nav.path, '__', nav.path.split('/') );
-        }
-        // this.navs.forEach(nav => {
-            
-            
-        //     console.log( nav.path );
-        // });
 
-        // console.log( nav.path.slice('/') );
+            if( loc=='/' ){
+                if( loc==nav.path ){
+                    this.navs[index]['isExactActive'] = true;
+
+                    if(nav.items){
+                        this.is_allocation = true;
+                    }
+                }
+            }
+            else if(nav.path.search(loc) >= 0){
+                this.navs[index]['isExactActive'] = true;
+                isExactActive = true;
+
+                if(nav.items){
+                    this.is_allocation = true;
+                }
+            }
+
+
+            if(nav.items){
+
+                // if( isExactActive ){
+                //     this.is_allocation = true;
+                // }
+
+                for (let i = 0; i < nav.items.length; i++) {
+                    const item = nav.items[i];
+
+                    if( item.group ){
+
+                        for (let n = 0; n < item.group.items.length; n++) {
+                            const sub = item.group.items[n];
+
+                            if( sub.path==loc ){
+                                this.navs[index]['items'][i]['group']['items'][n]['isActive'] = true;
+                            }
+                        }
+                    }
+                    else if( item.hr ){
+
+                    }
+                    else if( item.path==loc ){
+                        this.navs[index]['items'][i]['isActive'] = true;
+                    }
+                }
+            }
+        }
     },
 
     mounted(){

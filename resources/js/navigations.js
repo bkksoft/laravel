@@ -17,8 +17,8 @@ const Store = {
             name: "ข้อมูลโดยรวม"
         },
         {
-            children: {
-                name: "",
+            group: {
+                name: "สินค้า",
                 items: [
                     {
                         path: "/store/products",
@@ -26,10 +26,25 @@ const Store = {
                     }
                 ]
             }
+        },
+        {
+            hr: true
+        },
+
+        {
+            path: '/store/settings',
+            name: 'ตั้งค่าร้านค้า'
         }
     ]
 };
 
+const Blog = {
+    id: "blog",
+    path: "/blogs",
+    name: "บล็อก",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24"><path d="M3 3v18h18V3H3zm3 3h12v6H6V6zm12 12H6v-1h12v1zm0-2H6v-1h12v1z"></path></svg>`
+};
+
 export const routes = [
-    Home, Store
+    Home, Store, Blog
 ]
