@@ -13,4 +13,4 @@
 - Added Added Font Awesome 4 icons v4.7.0
 - Added Sarabun Font from google fonts
 - Added Helpers
-- Added Sidebar beta 1
+- Sidebar beta 1
