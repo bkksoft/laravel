@@ -1,6 +1,8 @@
 ## 1.0.1 (2020-08-19)
  - Added Apex Charts
  - Added jvectormap
+ - Added /dashboard-analytics
+ - Added /dashboard-crm
 
 ## 1.0.1 (2020-08-17)
 

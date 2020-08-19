@@ -13985,6 +13985,16 @@ button:focus {
   outline: 0;
 }
 
+.pt-40,
+.py-40 {
+  padding-top: 40px;
+}
+
+.pb-40,
+.py-40 {
+  padding-bottom: 40px;
+}
+
 .fs-10 {
   font-size: 10px;
 }
@@ -14741,10 +14751,5 @@ body {
 .container {
   padding-left: 32px;
   padding-right: 32px;
-}
-
-.page-header {
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 

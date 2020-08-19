@@ -11,8 +11,9 @@ import VueRouter from 'vue-router'
 // window.Vue = require('vue');
 
 import SidebarComponent from './components/SidebarComponent';
-import DashboardEcommerce from './components/Dashboard/DashboardEcommerce';
-
+import DashboardEcommerce from './components/Dashboard/Ecommerce/DashboardEcommerce';
+import DashboardAnalytics from './components/Dashboard/Analytics/DashboardAnalytics';
+import DashboardCrm from './components/Dashboard/CRM/DashboardCrm';
 
 // /**
 //  * The following block of code may be used to automatically register your
@@ -45,5 +46,8 @@ new Vue({
         SidebarComponent,
 
         DashboardEcommerce,
+        DashboardAnalytics,
+
+        DashboardCrm,
     }
 })
