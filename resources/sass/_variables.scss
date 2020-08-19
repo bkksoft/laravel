@@ -1,8 +1,10 @@
 // Body
-$body-bg: #f8fafc;
+// $body-bg: #f8fafc;
+$body-bg: #f4f4fb;
 
 // Typography
-$font-family-sans-serif: 'Sarabun', sans-serif;
+// $font-family-sans-serif: 'Sarabun', sans-serif;
+// $font-family-sans-serif: 'Nunito Sans', sans-serif;
 // $font-size-base: 0.9rem;
 // $line-height-base: 1.6;
 
@@ -20,7 +22,8 @@ $topbar-shadow: 0 1px 5px 0 rgba(41,85,115,.21);
 // $topbar-color: #5f6368;
 
 $sidebar-width: 228px;
-$sidebar-bg: #f4f4f4;
+// $sidebar-bg: #f4f4f4;
+$sidebar-bg: #fff;
 $sidebar-color: #3c4043;
 
 $sidebar-collapsed-width: 56px;
@@ -28,6 +31,8 @@ $sidebar-collapsed-width: 56px;
 
 $sidebar-sub-width: 200px;
 $sidebar-sub-bg: #fff;
+$sidebar-sub-shadow: 1px 0 6px 0 rgba(0, 0, 0, 0.06);
+$sidebar-sub-border-right: ''; // 1px solid #e9eaec;
 
 $btn-padding-y-super: 17px;
 $btn-padding-x-super: 31px;
@@ -35,3 +40,18 @@ $btn-font-size-super: 17px;
 $btn-border-radius-super: 12px;
 $btn-line-height-super: 1.17648;
 
+
+$card-border-color: transparent;
+$card-border-radius: 12px;
+
+/*
+position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
+  word-wrap: break-word;
+  background-color: $card-bg;
+  background-clip: border-box;
+  border: $card-border-width solid $card-border-color;
+  @include border-radius($card-border-radius);
+  */

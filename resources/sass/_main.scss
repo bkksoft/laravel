@@ -28,6 +28,8 @@
     .container-sm,
     .container {
         max-width: 100%;
+
+        // background-color: transparent;
     }
 }
 
@@ -206,7 +208,7 @@ body{
         .icon{
             width: 24px;
             text-align: center;
-            
+
 
             .fa{
                 line-height: 1;
@@ -249,12 +251,18 @@ body{
     }
 }
 .sidebar-header-account{
+    white-space: nowrap;
+    
     .account-logo {
-        width: 48px;
-        height: 48px;
+        width: 32px;
+        height: 32px;
 
         overflow: hidden;
         border-radius: 50%;
+    }
+
+    .account-name{
+        line-height: 1;
     }
 }
 .sidebar-container{
@@ -290,8 +298,8 @@ body{
 .sidebar-sub-menu{
     background-color: $sidebar-sub-bg;
     width: $sidebar-sub-width;
-    box-shadow: 1px 0 6px 0 rgba(0,0,0,.06);
-    border-right: 1px solid #e9eaec;
+    box-shadow: $sidebar-sub-shadow;
+    border-right: $sidebar-sub-border-right;
     overflow-y: auto;
     z-index: 2;
 }
@@ -305,8 +313,9 @@ body{
     .sidebar-header,
     .sidebar-header-progressbar,
     .sidebar-nav .nav-link,
-    .account-logo,
-    .account-subname{
+    // .account-logo,
+    .account-subname
+    {
         transition: all 0.25s cubic-bezier(.165,.84,.44,1);
     }
 
@@ -343,7 +352,7 @@ body{
             .sidebar-header-progressbar{
                 // display: none;
                 height: 0;
-                
+
                 margin: 0;
             }
 
@@ -352,12 +361,12 @@ body{
                 overflow: hidden;
                 width: $sidebar-width;
                 padding:12px;
-        
+
                 .account-logo{
                     width: 32px;
                     height: 32px;
                 }
-        
+
                 .account-subname{
                     height: 0;
                 }
@@ -365,16 +374,16 @@ body{
 
             .sidebar-menu{
                 width: $sidebar-collapsed-width;
-        
+
                 .sidebar-nav {
                     overflow: hidden;
                     width: $sidebar-width;
-        
+
                     .nav-link{
                         padding-left: 16px;
                         padding-right: 16px;
                         white-space: nowrap;
-                        
+
                     }
                 }
             }
@@ -391,7 +400,7 @@ body{
         }
     }
 
-    
+
 }
 
 
@@ -533,7 +542,7 @@ body{
 
     border-radius: 6px;
     padding: 6px;
-    
+
 
     &:hover{
         background-color: darken($topbar-bg, 7.5%); //rgba(color-yiq($topbar-bg),.3);
@@ -550,7 +559,7 @@ body{
 
     h1{
         font-size: 25px;
-        white-space: nowrap; 
+        white-space: nowrap;
         font-weight: 500;
         margin-bottom: 0;
         // line-height: 32px;
@@ -590,7 +599,7 @@ body{
 }
 
 .breadcrumbs-container{
-    
+
 }
 .breadcrumbs{
     display: flex;
@@ -662,14 +671,14 @@ body{
     color: $input-group-addon-color;
 
     .radio-type-button{
-        
+
         // margin-right: 3px;
         min-width: 26px;
         // width: inherit;
         // background: transparent;
         // border-color: transparent;
         // color: #3899ec;
-        
+
         // height: 100%;
         // border-radius: 4px;
         // text-align: center;
@@ -684,7 +693,7 @@ body{
             display: none;
 
             &:checked ~ .radio-type-button-span {
-                
+
 
                 &::before{
                     content: '';
@@ -721,7 +730,7 @@ body{
             text-align: center;
             cursor: pointer;
 
-            
+
         }
     }
 }

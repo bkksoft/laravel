@@ -1,5 +1,6 @@
 ## 1.0.1 (2020-08-19)
- - Upgrade Apex Charts beta 1
+ - Added Apex Charts
+ - Added jvectormap
 
 ## 1.0.1 (2020-08-17)
 
