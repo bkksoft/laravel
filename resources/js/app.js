@@ -11,6 +11,7 @@ import VueRouter from 'vue-router'
 // window.Vue = require('vue');
 
 import SidebarComponent from './components/SidebarComponent';
+import DashboardEcommerce from './components/Dashboard/DashboardEcommerce';
 
 
 // /**
@@ -41,6 +42,8 @@ new Vue({
     el: '#doc',
     // store,
     components: {
-        SidebarComponent
+        SidebarComponent,
+
+        DashboardEcommerce,
     }
 })

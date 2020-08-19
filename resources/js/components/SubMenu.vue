@@ -6,14 +6,14 @@
 
         <div class="sidebar-sub-menu-body">
             <ul class="sidebar-sub-menu-nav">
-                <li v-for="(item,i) in nav.items" :key="i" class="nav-item" :class="[item.group && 'nav-item-group', item.hr && 'nav-item-hr']">
+                <li v-for="(item,i) in nav.items" :key="i" class="nav-item" :class="[item.isActive && 'active', item.group && 'nav-item-group', item.hr && 'nav-item-hr']">
 
                     <!--  class="nav-item-group" -->
 
                     <template v-if="item.group">
                         <span class="nav-item nav-label" v-if="item.group.name">{{ item.group.name }}</span>
                         <ul class="sidebar-sub-menu-nav">
-                             <li v-for="(sub,n) in item.group.items" :key="n" class="nav-item">
+                             <li v-for="(sub,n) in item.group.items" :key="n" class="nav-item" :class="sub.isActive && 'active'">
                                 <a :href="sub.path" class="nav-link">
                                     <div class="nav-link-text">{{ sub.name }}</div>
                                 </a>

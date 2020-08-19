@@ -2,7 +2,26 @@ const Home = {
     id: "home",
     path: "/",
     name: "แดชบอร์ด",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24"><path d="M9 5v6H5V5h4m10 8v6h-4v-6h4m2-10h-8v6h8V3zM11 3H3v10h8V3zm10 8h-8v10h8V11zm-10 4H3v6h8v-6z"></path></svg>`
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24"><path d="M9 5v6H5V5h4m10 8v6h-4v-6h4m2-10h-8v6h8V3zM11 3H3v10h8V3zm10 8h-8v10h8V11zm-10 4H3v6h8v-6z"></path></svg>`,
+
+    items: [
+        {
+            path: "/dashboard-analytics",
+            name: "Analytics"
+        },
+        {
+            path: "/dashboard-crm",
+            name: "CRM"
+        },
+        {
+            path: "/",
+            name: "Ecommerce"
+        },
+        {
+            path: "/dashboard-projects",
+            name: "Projects"
+        }
+    ]
 };
 
 const Store = {
