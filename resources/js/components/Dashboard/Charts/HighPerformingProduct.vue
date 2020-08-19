@@ -35,7 +35,7 @@ export default {
                         name: 'TEAM A',
                         type: 'column',
                         data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30]
-                    }, 
+                    },
                     {
                         name: 'TEAM B',
                         type: 'area',
@@ -101,7 +101,7 @@ export default {
                             return y.toFixed(0) + " points";
                         }
                         return y;
-                    
+
                         }
                     }
                 }
@@ -122,14 +122,14 @@ export default {
                 xaxis: {
                     categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
                 },
-                
+
 
             }
         }
     },
     created(){
 
-        
+
     },
     mounted(){
 
