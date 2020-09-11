@@ -16,8 +16,6 @@ class Sidebar extends Component
 
     public function render()
     {
-        
-
         return view('components.sidebar', [
             'navs' => $this->navs(),
 
@@ -28,7 +26,7 @@ class Sidebar extends Component
     public function convert($data)
     {
         $current = request()->getRequestUri();
-        // 
+        //
 
         // sidebar--collapsed
 
@@ -39,7 +37,7 @@ class Sidebar extends Component
             if( !empty($nav['items']) ){
 
                 foreach ($nav['items'] as $i => $item) {
-                    
+
                     if (isset($item['group'])){
 
                         foreach($item['group']['items'] as $n => $sub){
@@ -78,7 +76,7 @@ class Sidebar extends Component
 
         // dd(json_decode( json_encode( $data )));
         // dd($data);
-        
+
         return json_decode( json_encode( $data ));
     }
 
@@ -92,7 +90,7 @@ class Sidebar extends Component
         $items[] = ['path'=>'','name'=>'รายการสั่งซื้อ'];
         $items[] = ['path'=>'','name'=>'การชำระเงิน'];
         $items[] = ['path'=>'','name'=>'การจัดส่ง'];
-        
+
 
         $items[] = ['group'=>[
             'title' => 'สินค้า',
@@ -109,13 +107,13 @@ class Sidebar extends Component
         // $items[] = ['path'=>'','name'=>'รายการสินค้า'];
         // $items[] = ['path'=>'','name'=>'หมวดหมู่'];
         // $items[] = ['path'=>'','name'=>'สต็อกสินค้า'];
-        
+
         // $items[] = ['header'=>'ช่องทางการขาย'];
         // $items[] = ['path'=>'','name'=>'เว็บไซต์'];
         // $items[] = ['path'=>'','name'=>'Shopee'];
         // $items[] = ['path'=>'','name'=>'Lazada'];
         // $items[] = ['path'=>'','name'=>'Facebook Store'];
-        
+
         // $items[] = ['header'=>'การตลาด'];
         // $items[] = ['path'=>'','name'=>'Email Marketing'];
         // // $items[] = ['path'=>'','name'=>'โฆษณาบน Facebook'];

@@ -24,3 +24,6 @@ Route::get('/store', 'StoreController@index')->name('store');
 Route::get('/blogs', 'BlogController@index')->name('blog');
 
 
+Route::get('/about', 'AboutController@index')->name('about');
+
+
