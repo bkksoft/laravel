@@ -22,3 +22,8 @@
 - Added Sarabun Font from google fonts
 - Added Helpers
 - Sidebar beta 1
+
+
+## Note
+- laravel V7 `composer create-project --prefer-dist laravel-export-excal "7.*"`
+- laravel V7 `composer create-project --prefer-dist laravel/laravel:^7.* projactname`
